@@ -1,0 +1,51 @@
+{
+  "name": "list-bot-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Probot app",
+  "author": "Aastha Bist <abist119@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/bistaastha/list-bot-test.git",
+  "homepage": "https://github.com/bistaastha/list-bot-test",
+  "bugs": "https://github.com/bistaastha/list-bot-test/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "probot": "^9.11.5"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "nock": "^12.0.3",
+    "nodemon": "^2.0.4",
+    "smee-client": "^1.1.0",
+    "standard": "^14.3.4"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
