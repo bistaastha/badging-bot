@@ -1,11 +1,4 @@
-const postWelcome = require('./src/postWelcome');
-const postChecklist = require('./src/postChecklist');
-
-module.exports = (app) => {
-  app.on("pull_request.opened", postWelcome);
-  app.on("pull_request.assigned", postChecklist);
-
-  async function postChecklist(context) {
+async function postChecklist(context) {
 
     const heading = `# Checklist for @${context.payload.assignee.login}`;
 
@@ -23,8 +16,6 @@ module.exports = (app) => {
     context.github.issues.createComment(
       context.issue({ body: reviewerMessage })
     );
+}
 
-  }
-
-  
-};
+module.exorts = postChecklist;
