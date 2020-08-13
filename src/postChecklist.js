@@ -16,6 +16,11 @@ async function postChecklist(context) {
     context.github.issues.createComment(
       context.issue({ body: reviewerMessage })
     );
+
+    if ((context.payload.issue.assignees.length) == 2)
+    {
+      context.github.issues.addLabels(context.issue({labels: ["review-begin"]}));
+    }
 }
 
-module.exorts = postChecklist;
+module.exports = postChecklist;
