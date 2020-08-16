@@ -1,10 +1,9 @@
 const calculateBadge = require('./calculateBadge');
 async function commandResponse(context) {
 
-  let reviewDetails = calculateBadge();
 
-  const message = "\n**Badge Image:**\n```\n" + reviewDetails[0] + "\n```"
-                + "\nReview percentage: " + reviewDetails[2] + "\n"
+  let reviewDetails = await calculateBadge(context);
+  const message = "\nReview percentage: " + reviewDetails[2] + "\n"
                 + "\nNumber of reviewers: " + reviewDetails[3] + "\n";
 
   return context.github.issues.createComment(
