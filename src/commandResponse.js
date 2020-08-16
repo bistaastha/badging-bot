@@ -1,4 +1,4 @@
-const initialCheckCount = 6;
+let initialCheckCount = 6;
 async function commandResponse(context) {
     const issueObject = await context.github.issues.listComments({
       owner: context.payload.repository.owner.login,
@@ -7,7 +7,7 @@ async function commandResponse(context) {
     });
     const issueURL = context.payload.issue.html_url;
 
-    if (context.payload.repository.name == "event-diversity-and-inclusion")
+    if ((context.payload.repository.name == "event-diversity-and-inclusion")||(context.payload.repository.name == "bot-showcase"))
     {
       initialCheckCount = 4;
     }
