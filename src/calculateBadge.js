@@ -1,6 +1,5 @@
-const initialCheckCount = 6;
+let initialCheckCount = 6;
 async function calculateBadge(context) {
-
     const issueObject = await context.github.issues.listComments({
         owner: context.payload.repository.owner.login,
         repo: context.payload.repository.name, 
