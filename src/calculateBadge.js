@@ -1,5 +1,6 @@
 let initialCheckCount = 6;
 async function calculateBadge(context) {
+
     const issueObject = await context.github.issues.listComments({
         owner: context.payload.repository.owner.login,
         repo: context.payload.repository.name, 
@@ -52,7 +53,7 @@ async function calculateBadge(context) {
 
     const markdownBadgeImage = "![Assigned badge: " + badgeAssigned[0] + "](" + url + ")";
 
-    const htmlBadgeImage = "<img src=" + url + " alt=" + "D&I Badging badge state: " + badgeAssigned[0] +"/>";
+    const htmlBadgeImage = "<img src='" + url + "' alt='" + "D&I Badging badge state: " + badgeAssigned[0] + "'/>";
     return [markdownBadgeImage, htmlBadgeImage, reviewResult, reviewerCount];
   
 }
