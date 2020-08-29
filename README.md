@@ -1,6 +1,14 @@
-# list-bot-test
+# badging-bot
 
-**Bot Function**
+## About
+
+This is a bot made for helping out with CHAOSS D&I Badging reviews.
+
+## Installation
+
+Visit the public page [here](https://github.com/apps/badging-bot) to install this App on one of your own repositories.
+
+## Bot Function
 
 - Posts contents of `.github/applicant-welcome.md` when an issue is opened
 - Posts contents of `.github/reviewer-welcome.md` + `.github/checklist.md` when a issue is assigned
