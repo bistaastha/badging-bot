@@ -18,12 +18,13 @@ async function assignReviewers(context) {
   usernameIndex = getRandomIndexes(0, length - 1);
 
   let list = filteredList.map(function(element) {
-    return element.replace(/-|\s/g, "");
+    return element.substring(2);
   });
 
-  let assigneeList = [list[usernameIndex[0]], list[usernameIndex[1]]];
+  console.log(list);
+  //let assigneeList = [list[usernameIndex[0]], list[usernameIndex[1]]];
 
-  const issueComment = context.issue({ assignees: assigneeList });
+  const issueComment = context.issue({ assignees: ["bistaastha"] });
   return context.github.issues.addAssignees(issueComment);
 }
 
