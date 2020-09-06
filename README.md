@@ -12,6 +12,7 @@ Visit the public page [here](https://github.com/apps/badging-bot) to install thi
 
 - Posts contents of `.github/applicant-welcome.md` when an issue is opened
 - Posts contents of `.github/reviewer-welcome.md` + `.github/checklist.md` when a issue is assigned
+- Posts contents of `.github/reviewer-welcome.md` + `.github/checklist-virtual.md` when a issue is assigned and the title starts with [Virtual Event]
 - Attaches label `review-begin` when the issue gets two assignees
 - Command `/result` is used to calculate which badge is fit for the application according to review checklists
 - Command `/help` uses the content of `.github/review-help.md` and posts it as comment
