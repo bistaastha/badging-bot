@@ -1,6 +1,6 @@
 async function postChecklist(context) {
 
-    const heading = `# Checklist for @${context.payload.assignee.login}`;
+    const heading = `# Checklist for ${context.payload.assignee.login}`;
 
     const reviewerWelcome = await context.github.repos.getContents(
       context.repo({path: '.github/reviewer-welcome.md'})
